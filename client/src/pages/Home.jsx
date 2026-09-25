@@ -8,6 +8,8 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  // Not debouncing this - search only fires on form submit, not on every
+  // keystroke, so it's fine without one for now.
   const fetchProducts = async (search = "") => {
     setLoading(true);
     try {

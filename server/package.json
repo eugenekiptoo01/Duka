@@ -1,5 +1,5 @@
 {
-  "name": "ecommerce-server",
+  "name": "duka-server",
   "version": "1.0.0",
   "description": "E-commerce API server",
   "main": "index.js",

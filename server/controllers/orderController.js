@@ -26,6 +26,11 @@ export const createOrder = async (req, res) => {
     });
 
     const createdOrder = await order.save();
+
+    // TODO: decrement Product.countInStock for each item here. Not doing it
+    // yet since I need to think about what happens if two people order the
+    // last unit at the same time (race condition) - probably needs a
+    // transaction or at least an atomic $inc with a stock check.
     res.status(201).json(createdOrder);
   } catch (err) {
     res.status(400).json({ message: err.message });

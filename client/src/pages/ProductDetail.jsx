@@ -11,6 +11,9 @@ export default function ProductDetail() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // no .catch() here yet - if the id is bad this just spins on "Loading..."
+    // forever instead of showing an error. Same issue doesn't happen on the
+    // Home page since that one already handles it.
     api.get(`/products/${id}`).then(({ data }) => setProduct(data));
   }, [id]);
 
